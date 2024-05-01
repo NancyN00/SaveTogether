@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SaveTogether</string>
+    <string name="save_together">SAVE TOGETHER</string>
+    <string name="be_happy_lets_find_solace_in_one_another_lets_love_and_be_loved">Be Happy! \n Lets find solace in one another. Lets love and be loved!</string>
+    <string name="love_hands_together">Love Hands Together</string>
+    <string name="save_me">Save Me</string>
+    <string name="save_you">Save You</string>
+    <string name="register">Register</string>
+    <string name="to_get_started">To get started,</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="your_fullname">Your Fullname</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_username">Your Username</string>
+    <string name="your_password">Your Password</string>
+    <string name="fullname_icon">Fullname Icon</string>
+    <string name="email_icon">Email Icon</string>
+    <string name="username_icon">Username Icon</string>
+    <string name="password_icon">Password Icon</string>
+    <string name="login">Login</string>
+    <string name="login_to_app">Login to app</string>
+    <string name="if_you_already_have_an_account">If you already have an account,</string>
+    <string name="your_email_or_username">Your Email or Username</string>
+</resources>
