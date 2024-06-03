@@ -10,7 +10,7 @@ val appointmentcards: List<AppointmentCard> = listOf(
         pic = R.drawable.love,
         name = "Dr.Ancy",
         career = "Pediatrician",
-        means = "Video Consultation" ,
+        means = "Video" ,
         time = "Today, 09:00 am",
         icon = Icons.Default.Videocam
     ),
@@ -28,7 +28,7 @@ val appointmentcards: List<AppointmentCard> = listOf(
         pic = R.drawable.love,
         name = "Miss Kunis",
         career = "Psychiatry",
-        means = "Video Consultation" ,
+        means = "Video" ,
         time = "16:00 PM",
         icon = Icons.Default.Videocam
     ),
@@ -44,10 +44,10 @@ val appointmentcards: List<AppointmentCard> = listOf(
         pic = R.drawable.love,
         name = "Dr. Kerry",
         career = "Dentist",
-        means = "Video Consultation" ,
+        means = "Video" ,
         time = "Tuesday, 21:00 PM",
         icon = Icons.Default.Videocam
-    )
+    ),
 
 )
 

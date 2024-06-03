@@ -9,6 +9,7 @@ import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -20,14 +21,19 @@ fun LocationContent(
 ){
 
     Row (
-        horizontalArrangement = Arrangement.Start
+
+        horizontalArrangement = Arrangement.SpaceBetween
+
+
     ){
         Icon (
             Icons.Default.LocationOn, contentDescription = "Location"
         )
 
         Column(
-            verticalArrangement = Arrangement.Center
+            modifier = Modifier.weight(200f),
+           // verticalArrangement = Arrangement.Center
+
         ) {
 
             Text(text = text1)

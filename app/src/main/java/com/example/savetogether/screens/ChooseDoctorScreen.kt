@@ -8,12 +8,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun SearchScreen(){
-
-    Box(modifier = Modifier
-        .fillMaxSize(),
-        contentAlignment = Alignment.Center)
-    {
-        Text(text = "Testing Search Screen")
+fun ChooseDoctorScreen(){
+    Box(modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    
+    ){
+        
+        Text(text = "This is the choose doctor screen")
+        
     }
 }

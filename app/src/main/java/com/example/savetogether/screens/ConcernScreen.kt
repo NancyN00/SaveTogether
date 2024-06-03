@@ -7,13 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
-
 @Composable
-fun HomeScreen(){
+fun ConcernScreen(){
+    Box (modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
 
-    Box(modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center)
-    {
-        Text(text = "Testing Home Screen")
+    ){
+        Text(text = "This is the Concern Screen")
+
+
     }
 }

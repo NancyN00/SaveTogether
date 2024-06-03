@@ -15,7 +15,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.savetogether.auth.LoginScreen
 import com.example.savetogether.auth.RegistrationScreen
 import com.example.savetogether.navigation.AppBottomNavigation
-import com.example.savetogether.screens.HomeScreen
 import com.example.savetogether.ui.theme.SaveTogetherTheme
 
 class MainActivity : ComponentActivity() {

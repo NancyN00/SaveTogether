@@ -45,7 +45,7 @@ fun WhatCardContent(){
                 modifier = Modifier.padding(4.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Image(painter = painterResource(id = R.drawable.labtest), contentDescription = "")
+                Image(painter = painterResource(id = R.drawable.doctorcard), contentDescription = "")
                 Text(text = "Lab Test",
                     textAlign = TextAlign.Center
                 )
@@ -60,7 +60,7 @@ fun WhatCardContent(){
                 modifier = Modifier.padding(4.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Image(painter = painterResource(id = R.drawable.medicine), contentDescription = "")
+                Image(painter = painterResource(id = R.drawable.doctorcard), contentDescription = "")
                 Text(text = "Medicine",
                     textAlign = TextAlign.Center
                 )

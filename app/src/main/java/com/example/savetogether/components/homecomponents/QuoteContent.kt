@@ -27,14 +27,14 @@ fun QuoteContent(
 ) {
 
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxWidth()
     ) {
         Image(painter = painterResource(id = R.drawable.love),
             contentDescription = "love",
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.fillMaxWidth())
 
-        Column(Modifier.fillMaxSize()) {
+        Column(Modifier.fillMaxWidth()) {
             Text(
                 text = text1,
                 fontStyle = FontStyle.Normal,
@@ -55,7 +55,7 @@ fun QuoteContent(
 @Composable
 fun QuoteContentPreview() {
     QuoteContent(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxWidth(),
         text1 = stringResource(R.string.daily_report),
         text2 = "Rise and shine, Ancy! \n How do you feel today?  "
     )

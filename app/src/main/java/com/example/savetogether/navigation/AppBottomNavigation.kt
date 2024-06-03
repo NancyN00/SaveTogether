@@ -15,9 +15,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.savetogether.screens.CommunitiesScreen
-import com.example.savetogether.screens.HomeScreen
-import com.example.savetogether.screens.SearchScreen
+import com.example.savetogether.mainscreens.CommunitiesScreen
+import com.example.savetogether.mainscreens.HomeScreen
+import com.example.savetogether.mainscreens.SearchScreen
+import com.example.savetogether.screens.ConcernScreen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -71,6 +72,7 @@ fun AppBottomNavigation(){
             composable(route = Screens.CommunitiesScreen.name){
                 CommunitiesScreen()
             }
+
         }
     }
 }
