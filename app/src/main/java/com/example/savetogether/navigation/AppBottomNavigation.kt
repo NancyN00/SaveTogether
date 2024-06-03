@@ -25,6 +25,7 @@ import com.example.savetogether.screens.ConcernScreen
 fun AppBottomNavigation(){
     val navController : NavHostController = rememberNavController()
 
+
     Scaffold (
         bottomBar = {
             NavigationBar {
@@ -62,7 +63,7 @@ fun AppBottomNavigation(){
             startDestination = Screens.HomeScreen.name){
 
             composable(route = Screens.HomeScreen.name){
-                HomeScreen()
+                HomeScreen(navController)
             }
 
             composable(route = Screens.SearchScreen.name){
@@ -72,6 +73,13 @@ fun AppBottomNavigation(){
             composable(route = Screens.CommunitiesScreen.name){
                 CommunitiesScreen()
             }
+
+            composable(route = Screens.ConcernScreen.name){
+                ConcernScreen()
+            }
+
+
+
 
         }
     }

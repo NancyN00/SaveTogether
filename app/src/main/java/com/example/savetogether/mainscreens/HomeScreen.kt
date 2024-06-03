@@ -11,6 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.savetogether.R
 import com.example.savetogether.components.homecomponents.LocationContent
 import com.example.savetogether.components.homecomponents.ProfileLayout
@@ -18,14 +20,15 @@ import com.example.savetogether.components.homecomponents.QuoteContent
 import com.example.savetogether.components.homecomponents.RowBtnQuickConsult
 import com.example.savetogether.components.homecomponents.WhatCardContent
 import com.example.savetogether.components.homecomponents.homeupcomingcard.AppointmentLazyRowSection
+import com.example.savetogether.navigation.Screens
 
 
 @Composable
 fun HomeScreen(
+    navController: NavHostController,
     modifier: Modifier = Modifier
         .fillMaxSize()
         .padding(16.dp),
-
 
 ) {
 
@@ -56,11 +59,9 @@ fun HomeScreen(
 
             RowBtnQuickConsult(
                 text = "We will assign \n" +
-                        " you quick doctor."
-            ) {
-
-            }
-
+                        " you quick doctor.",
+                onClick = {navController.navigate(Screens.ConcernScreen.name)}
+            )
 
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -74,9 +75,9 @@ fun HomeScreen(
         
     }
 }
-
-@Preview
-@Composable
-fun HomeScreenPreview(){
-    HomeScreen()
-}
+//
+//@Preview
+//@Composable
+//fun HomeScreenPreview(){
+//    HomeScreen()
+//}

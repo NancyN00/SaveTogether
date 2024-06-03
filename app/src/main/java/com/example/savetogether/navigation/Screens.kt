@@ -4,5 +4,6 @@ enum class Screens {
     HomeScreen(),
     SearchScreen(),
     CommunitiesScreen(),
+    ConcernScreen()
 
 }
