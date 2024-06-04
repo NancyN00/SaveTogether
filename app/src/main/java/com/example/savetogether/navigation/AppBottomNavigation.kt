@@ -76,7 +76,7 @@ fun AppBottomNavigation(){
             }
 
             composable(route = Screens.ConcernScreen.name){
-                ConcernScreen()
+                ConcernScreen(navController)
             }
 
             composable(route = Screens.ChooseDoctorScreen.name){

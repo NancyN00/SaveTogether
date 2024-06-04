@@ -20,7 +20,8 @@ fun ButtonContent(
         onClick =  onClick,
         modifier = modifier.fillMaxWidth()
             .height(40.dp),
-        shape = RoundedCornerShape(5.dp)
+        shape = RoundedCornerShape(5.dp),
+
           //  .background(MaterialTheme.colorScheme.onPrimaryContainer),
 
     ) {

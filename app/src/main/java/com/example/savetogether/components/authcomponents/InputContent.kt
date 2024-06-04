@@ -20,7 +20,7 @@ fun InputContent(
     leadingIcon : @Composable (() -> Unit) ? = null,
     onValueChange : (String) -> Unit
 ){
-    val borderColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(.5f)
+ //   val borderColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(.5f)
 
 
     OutlinedTextField(
@@ -33,10 +33,10 @@ fun InputContent(
         leadingIcon = leadingIcon,
         shape = RoundedCornerShape(8.dp),
         modifier = modifier.fillMaxWidth(),
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = borderColor,
-            unfocusedIndicatorColor = borderColor
-        )
+//        colors = TextFieldDefaults.textFieldColors(
+//            containerColor = borderColor,
+//            unfocusedIndicatorColor = borderColor
+//        )
 
         )
 
