@@ -85,7 +85,7 @@ fun ChooseDoctorScreen(navController: NavController){
             )
         },
     ) {
-
+//added
         LazyColumn(modifier = Modifier.padding(16.dp)) {
 
             items(chooseDoctorItem.size) { doctorDetails ->
