@@ -1,5 +1,4 @@
-package com.example.savetogether.screens
-
+package com.example.savetogether.components.choosedoctorcomponents.choosedoctorcard
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -31,7 +30,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -40,13 +38,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.savetogether.R
-import com.example.savetogether.components.choosedoctorcomponents.choosedoctorcard.chooseDoctorItem
 import com.example.savetogether.navigation.Screens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChooseDoctorScreen(navController: NavController){
+fun ChooseDoctorLazyColumnDetails(navController: NavController) {
+
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
@@ -85,6 +83,9 @@ fun ChooseDoctorScreen(navController: NavController){
             )
         },
     ) {
+
+
+        Spacer(modifier = Modifier.height(50.dp))
 
         LazyColumn(modifier = Modifier.padding(16.dp)) {
 

@@ -80,11 +80,8 @@ fun AppBottomNavigation(){
             }
 
             composable(route = Screens.ChooseDoctorScreen.name){
-                ChooseDoctorScreen()
+                ChooseDoctorScreen(navController)
             }
-
-
-
 
         }
     }
