@@ -18,6 +18,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.savetogether.mainscreens.CommunitiesScreen
 import com.example.savetogether.mainscreens.HomeScreen
 import com.example.savetogether.mainscreens.SearchScreen
+import com.example.savetogether.screens.ChooseDoctorScreen
 import com.example.savetogether.screens.ConcernScreen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -76,6 +77,10 @@ fun AppBottomNavigation(){
 
             composable(route = Screens.ConcernScreen.name){
                 ConcernScreen()
+            }
+
+            composable(route = Screens.ChooseDoctorScreen.name){
+                ChooseDoctorScreen()
             }
 
 
