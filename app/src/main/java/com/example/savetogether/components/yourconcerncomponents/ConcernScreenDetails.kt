@@ -90,12 +90,8 @@ fun ConcernScreenDetails(navController: NavHostController) {
 
     Spacer(modifier = Modifier.height(8.dp))
 
-    ButtonContent(onClick = {
-                            navController.navigate(Screens.ChooseDoctorScreen.name)
+    ButtonContent(modifier = Modifier, onClick = { navController.navigate(Screens.ChooseDoctorScreen.name) }, btnText ="Choose Doctor" )
 
-
-    },
-        btnText = stringResource(R.string.choose_doctor))
 
 
 }

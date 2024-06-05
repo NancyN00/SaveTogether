@@ -19,16 +19,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.savetogether.R
 import com.example.savetogether.components.authcomponents.ButtonContent
 import com.example.savetogether.components.authcomponents.InputContent
 import com.example.savetogether.components.authcomponents.RowTextContent
 import com.example.savetogether.components.authcomponents.TextHeader
+import com.example.savetogether.navigation.Screens
 
 @Composable
 fun RegistrationScreen(
+    navController : NavHostController,
     navigateToSignIn: () -> Unit
 ) {
 
@@ -108,7 +110,7 @@ fun RegistrationScreen(
 
         Spacer(modifier = Modifier.height(100.dp))
 
-        ButtonContent(onClick = navigateToSignIn, btnText = "Register")
+        ButtonContent(modifier =Modifier, onClick = { navController.navigate(Screens.DctMedicalInfoScreen.name) }, btnText = "Register")
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -120,8 +122,8 @@ fun RegistrationScreen(
     }
 }
 
-@Preview
-@Composable
-fun RegistrationScreenPreview(){
-    RegistrationScreen {}
-}
+//@Preview
+//@Composable
+//fun RegistrationScreenPreview(){
+//    RegistrationScreen {}
+//}

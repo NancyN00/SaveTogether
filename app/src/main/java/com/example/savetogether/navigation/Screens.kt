@@ -6,5 +6,7 @@ enum class Screens {
     CommunitiesScreen(),
     ConcernScreen(),
     ChooseDoctorScreen(),
+    DctMedicalInfoScreen(),
+    RegistrationScreen()
 
 }

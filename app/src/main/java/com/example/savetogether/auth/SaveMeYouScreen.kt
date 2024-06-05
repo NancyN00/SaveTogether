@@ -53,11 +53,11 @@ fun SaveMeYouScreen(
 
             Spacer(modifier = Modifier.height(30.dp))
 
-            ButtonContent(onClick = navigateToReg, btnText = stringResource(R.string.save_me))
+            ButtonContent(modifier =Modifier, onClick = navigateToReg, btnText = stringResource(R.string.save_me))
 
             Spacer(modifier = Modifier.padding(5.dp))
 
-            ButtonContent(onClick = navigateToReg, btnText = stringResource(R.string.save_you))
+            ButtonContent(modifier =Modifier, onClick = navigateToReg, btnText = stringResource(R.string.save_you))
 
         }
     }

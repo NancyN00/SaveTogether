@@ -20,6 +20,7 @@ import com.example.savetogether.mainscreens.HomeScreen
 import com.example.savetogether.mainscreens.SearchScreen
 import com.example.savetogether.screens.ChooseDoctorScreen
 import com.example.savetogether.screens.ConcernScreen
+import com.example.savetogether.screens.DctMedicalInfoScreen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -61,7 +62,7 @@ fun AppBottomNavigation(){
 
             navController = navController,
 
-            startDestination = Screens.HomeScreen.name){
+            startDestination = Screens.DctMedicalInfoScreen.name){
 
             composable(route = Screens.HomeScreen.name){
                 HomeScreen(navController)
@@ -81,6 +82,10 @@ fun AppBottomNavigation(){
 
             composable(route = Screens.ChooseDoctorScreen.name){
                 ChooseDoctorScreen(navController)
+            }
+
+            composable(route = Screens.DctMedicalInfoScreen.name){
+                DctMedicalInfoScreen(navController)
             }
 
         }

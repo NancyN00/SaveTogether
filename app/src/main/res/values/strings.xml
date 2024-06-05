@@ -26,4 +26,6 @@
     <string name="throat_pain">Throat Pain</string>
     <string name="add_upto_2_symptoms_to_help_us_n_pick_a_best_specialist_for_you">Add upto 2 symptoms to help us pick a best specialist for you.</string>
     <string name="choose_doctor">Choose Doctor</string>
+    <string name="medical_info">Medical Info</string>
+    <string name="doctor_s_info">Doctor\'s Info</string>
 </resources>

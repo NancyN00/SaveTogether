@@ -11,9 +11,9 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ButtonContent(
-    modifier: Modifier = Modifier,
-    onClick : () -> Unit,
-    btnText : String
+    modifier: Modifier,
+    onClick: () -> Unit,
+    btnText: String
 ){
     
     Button(

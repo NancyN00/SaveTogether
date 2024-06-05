@@ -64,6 +64,7 @@ fun Navigation(navController : NavHostController){
         }
         composable(route = "signup"){
                 RegistrationScreen(
+                    navController,
                     navigateToSignIn = {
                         navController.navigate("signin"){
                             launchSingleTop = true
