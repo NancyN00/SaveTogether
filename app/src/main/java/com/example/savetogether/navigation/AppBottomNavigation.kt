@@ -62,7 +62,7 @@ fun AppBottomNavigation(){
 
             navController = navController,
 
-            startDestination = Screens.DctMedicalInfoScreen.name){
+            startDestination = Screens.ChooseDoctorScreen.name){
 
             composable(route = Screens.HomeScreen.name){
                 HomeScreen(navController)

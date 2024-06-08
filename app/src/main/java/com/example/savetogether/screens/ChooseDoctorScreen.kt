@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -40,6 +41,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.savetogether.R
+import com.example.savetogether.components.authcomponents.ButtonContent
 import com.example.savetogether.components.choosedoctorcomponents.choosedoctorcard.chooseDoctorItem
 import com.example.savetogether.navigation.Screens
 
@@ -85,13 +87,56 @@ fun ChooseDoctorScreen(navController: NavController){
             )
         },
     ) {
+
+        Column(modifier = Modifier.fillMaxSize() .padding(horizontal = 8.dp),
+           ) {
 //added
-        LazyColumn(modifier = Modifier.padding(16.dp)) {
+        LazyColumn(modifier = Modifier
+            .padding(bottom = 120.dp)
+        ) {
+
+            item {
+                Spacer(modifier = Modifier.height(50.dp))
+            }
+
 
             items(chooseDoctorItem.size) { doctorDetails ->
                 ChooseDoctorCardSection(doctorDetails)
 
             }
+
+            item {    Spacer(modifier = Modifier.height(30.dp)) }
+
+        }
+            Box(
+                modifier = Modifier
+                    .fillMaxSize(),
+                        contentAlignment = Alignment.BottomEnd
+                   ){
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+
+                ButtonContent(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(end = 4.dp),
+                    onClick = { /*TODO*/ }, btnText = "More Details",
+
+
+                    )
+
+                ButtonContent(modifier = Modifier
+                    .weight(1f)
+                    .padding(end = 4.dp), onClick = { /*TODO*/ }, btnText = "Consult Now"
+                )
+
+            }
+
+        }
         }
     }
 
@@ -107,17 +152,18 @@ fun ChooseDoctorCardSection(
 
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .padding(10.dp)
     ) {
         Column(
             modifier = Modifier
                 .clip(RoundedCornerShape(40.dp))
-                .width(200.dp)
-                .height(160.dp)
+                .fillMaxWidth()
+                .wrapContentHeight()
                 .clickable { }
                 .padding(vertical = 5.dp, horizontal = 8.dp),
-            verticalArrangement = Arrangement.SpaceBetween
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+         //   verticalArrangement = Arrangement.SpaceBetween
         ) {
 
             Card(
@@ -125,26 +171,31 @@ fun ChooseDoctorCardSection(
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.errorContainer,
                 ),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(160.dp)
 
             ) {
-                Row() {
+                Row(
+                    modifier =  Modifier.fillMaxWidth()
+                ) {
                     Image(painter = image, contentDescription = "Doctor Profile Pic")
 
-                }
+                    Column(modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 8.dp)) {
 
-                Column(modifier = Modifier.fillMaxSize()) {
+                        Text(text = doctorCard.doctorName)
 
-                    Text(text = doctorCard.doctorName)
+                        Spacer(modifier = Modifier.height(10.dp))
 
-                    Spacer(modifier = Modifier.height(10.dp))
+                        Text(text = doctorCard.hospitalName)
 
-                    Text(text = doctorCard.hospitalName)
+                        Spacer(modifier = Modifier.height(10.dp))
 
-                    Spacer(modifier = Modifier.height(10.dp))
+                        Text(text = doctorCard.rate)
 
-                    Text(text = doctorCard.rate)
-
+                    }
                 }
 
             }
