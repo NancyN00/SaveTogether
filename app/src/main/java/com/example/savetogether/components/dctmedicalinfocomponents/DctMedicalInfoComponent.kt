@@ -70,6 +70,8 @@ fun DctMedicalInfoComponent() {
                                     modifier = Modifier.padding(start = 8.dp, top = 10.dp)
                                     )
                             }
+
+                            //this is the actual text
                             innerTextField()
                         }
 
@@ -78,7 +80,6 @@ fun DctMedicalInfoComponent() {
 
 
                 }
-
 
             }
         }

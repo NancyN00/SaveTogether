@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -18,7 +19,8 @@ fun ButtonContent(
     
     Button(
         onClick =  onClick,
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier
+            .fillMaxWidth()
             .height(40.dp),
         shape = RoundedCornerShape(5.dp),
 
@@ -29,4 +31,10 @@ fun ButtonContent(
         
     }
 
+}
+
+@Preview
+@Composable
+fun BtnContentPreview(){
+    ButtonContent(modifier = Modifier, onClick = { /*TODO*/ }, btnText = "Save")
 }

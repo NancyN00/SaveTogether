@@ -28,4 +28,7 @@
     <string name="choose_doctor">Choose Doctor</string>
     <string name="medical_info">Medical Info</string>
     <string name="doctor_s_info">Doctor\'s Info</string>
+    <string name="file_upload">File Upload</string>
+    <string name="upload">Upload</string>
+    <string name="home">Home</string>
 </resources>
