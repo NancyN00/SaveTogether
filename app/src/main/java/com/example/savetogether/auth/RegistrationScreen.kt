@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.savetogether.R
 import com.example.savetogether.components.authcomponents.ButtonContent
@@ -31,6 +32,7 @@ import com.example.savetogether.navigation.Screens
 @Composable
 fun RegistrationScreen(
     navController : NavHostController,
+    naviController : NavController,
     navigateToSignIn: () -> Unit
 ) {
 
