@@ -7,7 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.auth.FirebaseAuth
 
-class RegistrationViewModel (navController : NavController): ViewModel() {
+class RegistrationViewModel (): ViewModel() {
 
     private val TAG = RegistrationViewModel::class.simpleName
 
@@ -40,7 +40,7 @@ class RegistrationViewModel (navController : NavController): ViewModel() {
             }
 
             RegUIEvents.RegistrationBtnClicked -> {
-                signUp()
+
             }
 
         }

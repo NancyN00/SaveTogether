@@ -32,7 +32,6 @@ import com.example.savetogether.navigation.Screens
 @Composable
 fun RegistrationScreen(
     navController : NavHostController,
-    naviController : NavController,
     navigateToSignIn: () -> Unit
 ) {
 

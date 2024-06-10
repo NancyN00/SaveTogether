@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -48,7 +47,7 @@ import com.example.savetogether.navigation.Screens
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChooseDoctorScreen(navController: NavController){
+fun ChooseDoctorScreen(navController: NavController) {
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
@@ -62,9 +61,7 @@ fun ChooseDoctorScreen(navController: NavController){
                 ),
                 title = {
                     Text(
-                        "Choose Doctor",
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
+                        "Choose Doctor", maxLines = 1, overflow = TextOverflow.Ellipsis
                     )
                 },
                 navigationIcon = {
@@ -88,55 +85,60 @@ fun ChooseDoctorScreen(navController: NavController){
         },
     ) {
 
-        Column(modifier = Modifier.fillMaxSize() .padding(horizontal = 8.dp),
-           ) {
-//added
-        LazyColumn(modifier = Modifier
-            .padding(bottom = 120.dp)
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 8.dp),
         ) {
-
-            item {
-                Spacer(modifier = Modifier.height(50.dp))
-            }
-
-
-            items(chooseDoctorItem.size) { doctorDetails ->
-                ChooseDoctorCardSection(doctorDetails)
-
-            }
-
-            item {    Spacer(modifier = Modifier.height(30.dp)) }
-
-        }
-            Box(
-                modifier = Modifier
-                    .fillMaxSize(),
-                        contentAlignment = Alignment.BottomEnd
-                   ){
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
+//added
+            LazyColumn(
+                modifier = Modifier.padding(bottom = 120.dp)
             ) {
 
-                ButtonContent(
-                    modifier = Modifier
-                        .weight(1f)
-                        .padding(end = 4.dp),
-                    onClick = { /*TODO*/ }, btnText = "More Details",
+                item {
+                    Spacer(modifier = Modifier.height(50.dp))
+                }
+
+                items(chooseDoctorItem.size) { doctorDetails ->
+                    ChooseDoctorCardSection(doctorDetails)
+
+                }
+
+                item {
+                    Spacer(modifier = Modifier.height(30.dp))
+                    Box(
+                        modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomEnd
+                    ) {
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceEvenly
+                        ) {
+
+                            ButtonContent(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .padding(end = 4.dp),
+                                onClick = { /*TODO*/ }, btnText = "More Details",
 
 
-                    )
+                                )
 
-                ButtonContent(modifier = Modifier
-                    .weight(1f)
-                    .padding(end = 4.dp), onClick = { /*TODO*/ }, btnText = "Consult Now"
-                )
+                            ButtonContent(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .padding(end = 4.dp),
+                                onClick = { /*TODO*/ },
+                                btnText = "Consult Now"
+                            )
+
+                        }
+                    }
+
+                }
+
 
             }
-
-        }
         }
     }
 
@@ -155,35 +157,34 @@ fun ChooseDoctorCardSection(
             .fillMaxWidth()
             .padding(10.dp)
     ) {
-        Column(
-            modifier = Modifier
-                .clip(RoundedCornerShape(40.dp))
-                .fillMaxWidth()
-                .wrapContentHeight()
-                .clickable { }
-                .padding(vertical = 5.dp, horizontal = 8.dp),
+        Column(modifier = Modifier
+            .clip(RoundedCornerShape(40.dp))
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .clickable { }
+            .padding(vertical = 5.dp, horizontal = 8.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
-         //   verticalArrangement = Arrangement.SpaceBetween
+            //   verticalArrangement = Arrangement.SpaceBetween
         ) {
 
             Card(
-                onClick = {},
-                colors = CardDefaults.cardColors(
+                onClick = {}, colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.errorContainer,
-                ),
-                modifier = Modifier
+                ), modifier = Modifier
                     .fillMaxWidth()
                     .height(160.dp)
 
             ) {
                 Row(
-                    modifier =  Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth()
                 ) {
                     Image(painter = image, contentDescription = "Doctor Profile Pic")
 
-                    Column(modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 8.dp)) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 8.dp)
+                    ) {
 
                         Text(text = doctorCard.doctorName)
 
