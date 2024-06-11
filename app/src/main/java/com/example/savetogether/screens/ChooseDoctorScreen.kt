@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -31,7 +30,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -101,40 +99,10 @@ fun ChooseDoctorScreen(navController: NavController) {
 
                 items(chooseDoctorItem.size) { doctorDetails ->
                     ChooseDoctorCardSection(doctorDetails)
-
                 }
 
                 item {
                     Spacer(modifier = Modifier.height(30.dp))
-                    Box(
-                        modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomEnd
-                    ) {
-
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceEvenly
-                        ) {
-
-                            ButtonContent(
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .padding(end = 4.dp),
-                                onClick = { /*TODO*/ }, btnText = "More Details",
-
-
-                                )
-
-                            ButtonContent(
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .padding(end = 4.dp),
-                                onClick = { /*TODO*/ },
-                                btnText = "Consult Now"
-                            )
-
-                        }
-                    }
-
                 }
 
 
@@ -151,11 +119,11 @@ fun ChooseDoctorCardSection(
 ) {
     val doctorCard = chooseDoctorItem[index]
     val image = painterResource(id = R.drawable.savetogether)
+    Card(
+        onClick = {}, colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.errorContainer,
+        ), modifier = Modifier.fillMaxWidth().padding(8.dp)
 
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp)
     ) {
         Column(modifier = Modifier
             .clip(RoundedCornerShape(40.dp))
@@ -166,42 +134,54 @@ fun ChooseDoctorCardSection(
             verticalArrangement = Arrangement.spacedBy(10.dp)
             //   verticalArrangement = Arrangement.SpaceBetween
         ) {
-
-            Card(
-                onClick = {}, colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.errorContainer,
-                ), modifier = Modifier
-                    .fillMaxWidth()
-                    .height(160.dp)
-
+            Row(
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth()
+                Image(painter = image, contentDescription = "Doctor Profile Pic")
+
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 8.dp)
                 ) {
-                    Image(painter = image, contentDescription = "Doctor Profile Pic")
 
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 8.dp)
-                    ) {
+                    Text(text = doctorCard.doctorName)
 
-                        Text(text = doctorCard.doctorName)
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                        Spacer(modifier = Modifier.height(10.dp))
+                    Text(text = doctorCard.hospitalName)
 
-                        Text(text = doctorCard.hospitalName)
+                    Spacer(modifier = Modifier.height(10.dp))
 
-                        Spacer(modifier = Modifier.height(10.dp))
+                    Text(text = doctorCard.rate)
 
-                        Text(text = doctorCard.rate)
-
-                    }
                 }
-
             }
 
+            Row(
+                modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+
+                ButtonContent(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(end = 4.dp),
+                    onClick = { /*TODO*/ }, btnText = "More Details",
+
+
+                    )
+
+                ButtonContent(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(end = 4.dp),
+                    onClick = { /*TODO*/ },
+                    btnText = "Consult Now"
+                )
+
+            }
         }
+
     }
 
 
