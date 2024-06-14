@@ -7,6 +7,7 @@ enum class Screens {
     ConcernScreen(),
     ChooseDoctorScreen(),
     DctMedicalInfoScreen(),
-    RegistrationScreen()
+    RegistrationScreen(),
+    Login(),
 
 }

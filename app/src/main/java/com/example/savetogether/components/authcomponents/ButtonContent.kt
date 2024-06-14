@@ -14,7 +14,8 @@ import androidx.compose.ui.unit.dp
 fun ButtonContent(
     modifier: Modifier,
     onClick: () -> Unit,
-    btnText: String
+    btnText: String,
+    enabled: Boolean
 ){
     
     Button(
@@ -36,5 +37,5 @@ fun ButtonContent(
 @Preview
 @Composable
 fun BtnContentPreview(){
-    ButtonContent(modifier = Modifier, onClick = { /*TODO*/ }, btnText = "Save")
+    ButtonContent(modifier = Modifier, onClick = { /*TODO*/ }, btnText = "Save", enabled = false)
 }

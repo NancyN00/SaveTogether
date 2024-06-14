@@ -16,24 +16,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.example.savetogether.R
 import com.example.savetogether.components.authcomponents.ButtonContent
 import com.example.savetogether.components.authcomponents.InputContent
-import com.example.savetogether.components.authcomponents.RowTextContent
 import com.example.savetogether.components.authcomponents.TextHeader
+import com.example.savetogether.data.regstate.RegUIEvents
+import com.example.savetogether.data.regstate.RegistrationViewModel
 import com.example.savetogether.navigation.Screens
 
 @Composable
 fun RegistrationScreen(
-    navController : NavHostController,
-    naviController : NavController,
-    navigateToSignIn: () -> Unit
+    //navController: NavHostController,
+    //navigateToSignIn: () -> Unit,
+    regViewModel: RegistrationViewModel = viewModel(),
+    navController: NavHostController,
+    function: () -> Unit
 ) {
 
     var fullname by remember { mutableStateOf("") }
@@ -53,11 +55,11 @@ fun RegistrationScreen(
 
         Spacer(modifier = Modifier.padding(10.dp))
 
-        RowTextContent(
-            text1 = stringResource(R.string.to_get_started),
-            text2 = stringResource(R.string.register),
-            onClickText2 = navigateToSignIn
-        )
+//        RowTextContent(
+//            text1 = stringResource(R.string.to_get_started),
+//            text2 = stringResource(R.string.register),
+//            onClickText2 = navigateToSignIn
+//        )
 
         Spacer(modifier = Modifier.padding(18.dp))
 
@@ -91,7 +93,7 @@ fun RegistrationScreen(
             value = username,
             placeholder = stringResource(R.string.your_username),
             onValueChange = { username = it },
-           leadingIcon = {
+            leadingIcon = {
                 Icon(
                     Icons.Default.Person,
                     contentDescription = stringResource(R.string.username_icon)
@@ -104,23 +106,33 @@ fun RegistrationScreen(
             value = password,
             placeholder = stringResource(R.string.your_password),
             onValueChange = { password = it },
-           leadingIcon = {
+            leadingIcon = {
                 Icon(
-                    Icons.Default.Password, contentDescription = stringResource(R.string.password_icon)
+                    Icons.Default.Password,
+                    contentDescription = stringResource(R.string.password_icon)
                 )
             })
 
         Spacer(modifier = Modifier.height(100.dp))
 
-        ButtonContent(modifier =Modifier, onClick = { navController.navigate(Screens.DctMedicalInfoScreen.name) }, btnText = "Register")
+        ButtonContent(modifier = Modifier,
+            enabled = false,
+
+            onClick = {
+                regViewModel.onEvent(RegUIEvents.RegistrationBtnClicked)
+
+            }, btnText = "Register"
+        )
+
+
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        RowTextContent(
-            text1 = "I already have an account",
-            text2 = stringResource(R.string.login),
-            onClickText2 = navigateToSignIn,
-            modifier = Modifier.align(Alignment.CenterHorizontally))
+//        RowTextContent(
+//            text1 = "I already have an account",
+//            text2 = stringResource(R.string.login),
+//            onClickText2 = navigateToSignIn,
+//            modifier = Modifier.align(Alignment.CenterHorizontally))
     }
 }
 

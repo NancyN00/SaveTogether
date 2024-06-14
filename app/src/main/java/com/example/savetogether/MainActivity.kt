@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.savetogether.auth.LoginScreen
 import com.example.savetogether.auth.RegistrationScreen
+import com.example.savetogether.data.regstate.RegistrationViewModel
 import com.example.savetogether.navigation.AppBottomNavigation
 import com.example.savetogether.ui.theme.SaveTogetherTheme
 
@@ -64,15 +65,13 @@ fun Navigation(navController : NavHostController){
         }
         composable(route = "signup"){
                 RegistrationScreen(
-                    navController,
-                    navigateToSignIn = {
-                        navController.navigate("signin"){
-                            launchSingleTop = true
-                            restoreState = true
-                        }
+                    navController = navController, regViewModel = RegistrationViewModel(navController)) {
+                    navController.navigate("signin") {
+                        launchSingleTop = true
+                        restoreState = true
                     }
-                )
-            }
+                }
+        }
 
             composable(route = "home"){
                 AppBottomNavigation()

@@ -85,7 +85,12 @@ fun LoginScreen(
 
         Spacer(modifier = Modifier.height(100.dp))
 
-        ButtonContent(modifier =Modifier, onClick = navigateToHome, btnText = "Login")
+        ButtonContent(
+            modifier =Modifier,
+            onClick = navigateToHome,
+            btnText = "Login",
+            enabled = false
+        )
 
         Spacer(modifier = Modifier.height(8.dp))
 

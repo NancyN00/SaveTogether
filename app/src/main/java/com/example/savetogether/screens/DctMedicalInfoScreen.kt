@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.IconButton
@@ -72,14 +71,15 @@ fun DctMedicalInfoScreen(navController: NavHostController) {
                 Toast.makeText(context, "uploaded", Toast.LENGTH_SHORT).show()
 
 
-            }, btnText = stringResource(R.string.upload))
+            }, btnText = stringResource(R.string.upload), enabled = false)
 
             Spacer(modifier = Modifier.height(10.dp))
 
             ButtonContent(
                 modifier = Modifier,
                 onClick = { Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show() },
-                btnText = stringResource(R.string.home)
+                btnText = stringResource(R.string.home),
+                enabled = false
             )
 
 
