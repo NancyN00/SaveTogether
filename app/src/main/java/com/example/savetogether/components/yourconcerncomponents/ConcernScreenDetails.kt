@@ -92,7 +92,7 @@ fun ConcernScreenDetails(navController: NavHostController) {
         modifier = Modifier,
         onClick = { navController.navigate(Screens.ChooseDoctorScreen.name) },
         btnText ="Choose Doctor",
-        enabled = false
+
     )
 
 

@@ -71,7 +71,7 @@ fun DctMedicalInfoScreen(navController: NavHostController) {
                 Toast.makeText(context, "uploaded", Toast.LENGTH_SHORT).show()
 
 
-            }, btnText = stringResource(R.string.upload), enabled = false)
+            }, btnText = stringResource(R.string.upload))
 
             Spacer(modifier = Modifier.height(10.dp))
 
@@ -79,7 +79,6 @@ fun DctMedicalInfoScreen(navController: NavHostController) {
                 modifier = Modifier,
                 onClick = { Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show() },
                 btnText = stringResource(R.string.home),
-                enabled = false
             )
 
 

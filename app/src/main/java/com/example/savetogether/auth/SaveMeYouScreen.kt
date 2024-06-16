@@ -57,7 +57,7 @@ fun SaveMeYouScreen(
                 modifier =Modifier,
                 onClick = navigateToReg,
                 btnText = stringResource(R.string.save_me),
-                enabled = false
+
             )
 
             Spacer(modifier = Modifier.padding(5.dp))
@@ -66,7 +66,7 @@ fun SaveMeYouScreen(
                 modifier =Modifier,
                 onClick = navigateToReg,
                 btnText = stringResource(R.string.save_you),
-                enabled = false
+
             )
 
         }

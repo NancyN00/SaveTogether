@@ -89,7 +89,7 @@ fun LoginScreen(
             modifier =Modifier,
             onClick = navigateToHome,
             btnText = "Login",
-            enabled = false
+
         )
 
         Spacer(modifier = Modifier.height(8.dp))

@@ -1,20 +1,21 @@
-package com.example.savetogether.data.regstate
+package com.example.savetogether.viewmodel
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+import com.example.savetogether.data.regstate.RegUIEvents
+import com.example.savetogether.data.regstate.RegUIState
 import com.google.firebase.auth.FirebaseAuth
 
 class RegistrationViewModel (): ViewModel() {
 
-    private val TAG = RegistrationViewModel::class.simpleName
+
+    //  private val TAG = RegistrationViewModel::class.simpleName
 
     var registrationUIState = mutableStateOf(RegUIState())
 
-    fun onEvent(event : RegUIEvents){
-        when(event){
+    fun onEvent(event: RegUIEvents) {
+        when (event) {
             is RegUIEvents.FullNameChanged -> {
 
                 registrationUIState.value = registrationUIState.value.copy(
@@ -28,11 +29,13 @@ class RegistrationViewModel (): ViewModel() {
                     email = event.email
                 )
             }
+
             is RegUIEvents.UserNameChanged -> {
                 registrationUIState.value = registrationUIState.value.copy(
                     userName = event.username
                 )
             }
+
             is RegUIEvents.PasswordChanged -> {
                 registrationUIState.value = registrationUIState.value.copy(
                     password = event.password
@@ -43,34 +46,48 @@ class RegistrationViewModel (): ViewModel() {
 
             }
 
+            else -> {}
         }
-
     }
 
-    private fun signUp(navController: NavController) {
+    private fun signUp() {
         Log.d(TAG, "inside_signup")
 
-        createUserInFirebase(
-            email = registrationUIState.value.email,
-            password = registrationUIState.value.password,
-           navController = navController
 
-        )
+
+        registrationUIState.value.email?.let {
+            registrationUIState.value.password?.let { it1 ->
+                createUserInFirebase(
+                    email = it,
+                    password = it1
+
+                )
+            }
+        }
     }
 
-    private fun createUserInFirebase(email : String, password : String, navController : NavController) {
+    private val TAG = "Registration error"
+    private fun createUserInFirebase(email: String?, password: String?) {
 
+        if (email.isNullOrBlank() || password.isNullOrBlank()) {
+            Log.d(TAG, "password empty or null")
+            return
+        }
 
 
         FirebaseAuth.getInstance()
             .createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-                if (it.isSuccessful){
+                if (it.isSuccessful) {
 
+
+                } else {
+
+                    Log.d(TAG, "Registration error")
 
                 }
 
             }
     }
-
 }
+

@@ -17,3 +17,5 @@ fun SearchScreen(){
         Text(text = "Testing Search Screen")
     }
 }
+
+//input the functionality
