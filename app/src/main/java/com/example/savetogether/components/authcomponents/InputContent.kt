@@ -15,10 +15,10 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun InputContent(
     modifier: Modifier = Modifier,
-    value : String,
-    placeholder : String,
-    leadingIcon : @Composable (() -> Unit) ? = null,
-    onValueChange : (String) -> Unit
+    value: String,
+    placeholder: String,
+    leadingIcon: @Composable (() -> Unit) ? = null,
+    onValueChange: (String) -> Unit
 ){
  //   val borderColor = MaterialTheme.colorScheme.onPrimaryContainer.copy(.5f)
 

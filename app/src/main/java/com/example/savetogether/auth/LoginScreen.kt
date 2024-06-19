@@ -63,7 +63,8 @@ fun LoginScreen(
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        InputContent(value = pass,
+        InputContent(
+            value = pass,
             placeholder = "Your Password",
             onValueChange = { pass = it },
             leadingIcon = {
