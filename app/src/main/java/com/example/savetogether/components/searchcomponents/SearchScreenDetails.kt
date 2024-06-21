@@ -7,14 +7,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -25,35 +25,37 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.savetogether.R
 import com.example.savetogether.components.authcomponents.InputContent
 import com.example.savetogether.viewmodel.SearchViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
 
-//the search component in the middle and then input the SearchDoctorLazyColumn in here.
 @Composable
-fun SearchScreenDetails(){
+fun SearchScreenDetails(viewModel: SearchViewModel = viewModel()){
 
-    val viewModel = viewModel<SearchViewModel>()
+/**either use this or initialize it through the parameter
+   val viewModel = viewModel<SearchViewModel>() **/
+
     /**update when flow changes**/
-    val searchDoctors by viewModel.searchDoctors.collectAsState()
-    val doctorss by viewModel.searchs.collectAsState()
-    val isSearching by viewModel.isSearching.collectAsState()
+ val searchResult by viewModel.searchResult.collectAsState()
+ val isSearching by viewModel.isSearching.collectAsState()
 
-    var search by remember { mutableStateOf("") }
+
+
+    var searchQuery by remember { mutableStateOf("") }
     val context = LocalContext.current
 
 
     Box(modifier = Modifier.fillMaxWidth()){
 
         InputContent(
-            value = searchDoctors,
+            value = searchQuery,
+            onValueChange = { newQuery ->
+                searchQuery = newQuery
+                viewModel.onSearchDoctorChange(newQuery)
+            },
             placeholder = "Search...",
-            onValueChange = viewModel::onSearchDoctorChange,
             leadingIcon = {
                 IconButton(onClick = { Toast.makeText(context, "Search clicked", Toast.LENGTH_SHORT).show() }) {
                     Icon(Icons.Default.Search, contentDescription = "Search Icon")
@@ -79,11 +81,20 @@ fun SearchScreenDetails(){
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        LazyColumn {
-            items(SearchDoctorItem.size) { searchItem ->
-                SearchDoctorCard(index = searchItem)
-
+        val listState = rememberLazyListState()
+        LazyColumn (){
+          items(searchResult){doctor ->
+              SearchDoctorCard(doctor)
             }
+
+
+          /** use this to display the list before search implementation
+            LazyColumn {
+                items(SearchDoctorItem.size) { searchItem ->
+                    SearchDoctorCard(index = searchItem)
+                    // SearchDoctorCard(index = searchItem)
+
+                } **/
         }
     }
 }

@@ -46,12 +46,12 @@ val SearchDoctorItem: List<SearchDoctor> = listOf(
         searchdoctorName = "Dr. Manny",
         searchhospitalName = "Kilma Hospital",
         searchrate = "5 stars"
+    ),
+    SearchDoctor(
+   //     searchimg = R.drawable.savetogether,
+        searchdoctorName = "Dr. Kerry",
+        searchhospitalName = "Kilma Hospital",
+        searchrate = "5 stars"
     )
-//    SearchDoctor(
-//   //     searchimg = R.drawable.savetogether,
-//        searchdoctorName = "Dr. Kerry",
-//        searchhospitalName = "Kilma Hospital",
-//        searchrate = "5 stars"
-//    )
 
 )
