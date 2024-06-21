@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
-fun CommunitiesSectionCard(
+fun CommunitiesMainSectionCard(
     sectionImg: Painter,
     sectionTitle: String
 ) {

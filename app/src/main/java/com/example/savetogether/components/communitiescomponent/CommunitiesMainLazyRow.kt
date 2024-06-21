@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.savetogether.R
 
 @Composable
-fun CommunitiesMainCards() {
+fun CommunitiesMainLazyRow() {
 
     LazyRow(
         modifier = Modifier.fillMaxWidth().padding(16.dp)
@@ -23,7 +23,7 @@ fun CommunitiesMainCards() {
         item {
             LazyColumn(modifier = Modifier.fillMaxWidth()) {
                 item {
-                    CommunitiesSectionCard(
+                    CommunitiesMainSectionCard(
                         sectionImg = painterResource(id = R.drawable.nineoneone),
                         sectionTitle = "Who to call"
                     )
@@ -31,7 +31,7 @@ fun CommunitiesMainCards() {
                 }
 
                 item {
-                    CommunitiesSectionCard(
+                    CommunitiesMainSectionCard(
                         sectionImg = painterResource(id = R.drawable.write_us),
                         sectionTitle = " Blogs"
                     )
@@ -39,7 +39,7 @@ fun CommunitiesMainCards() {
                 }
 
                 item {
-                    CommunitiesSectionCard(
+                    CommunitiesMainSectionCard(
                         sectionImg = painterResource(id = R.drawable.happypatient),
                         sectionTitle = "Testimony"
                     )
@@ -47,7 +47,7 @@ fun CommunitiesMainCards() {
                 }
 
                 item {
-                    CommunitiesSectionCard(
+                    CommunitiesMainSectionCard(
                         sectionImg = painterResource(id = R.drawable.yoga),
                         sectionTitle = " Exercice and Mindfulness"
                     )
@@ -62,6 +62,6 @@ fun CommunitiesMainCards() {
 
 @Preview
 @Composable
-fun CommunitiesMainCardsPreview() {
-    CommunitiesMainCards()
+fun CommunitiesMainLazyRowPreview() {
+    CommunitiesMainLazyRow()
 }
