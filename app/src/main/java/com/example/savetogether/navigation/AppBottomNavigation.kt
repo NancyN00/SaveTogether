@@ -62,7 +62,7 @@ fun AppBottomNavigation(){
 
             navController = navController,
 
-            startDestination = Screens.HomeScreen.name){
+            startDestination = Screens.CommunitiesScreen.name){
 
             composable(route = Screens.HomeScreen.name){
                 HomeScreen(navController)

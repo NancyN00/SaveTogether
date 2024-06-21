@@ -2,6 +2,7 @@ package com.example.savetogether.components.searchcomponents
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -80,12 +81,17 @@ fun SearchScreenDetails(viewModel: SearchViewModel = viewModel()){
     }else{
 
         Spacer(modifier = Modifier.height(15.dp))
+        Box(modifier = Modifier.fillMaxSize()) {
+            Column(modifier = Modifier.fillMaxSize()) {
 
-        val listState = rememberLazyListState()
-        LazyColumn (){
-          items(searchResult){doctor ->
-              SearchDoctorCard(doctor)
+                Spacer(modifier = Modifier.height(15.dp))
+
+
+        LazyColumn (modifier = Modifier.fillMaxSize() ) {
+            items(searchResult) { doctor ->
+                SearchDoctorCard(doctor)
             }
+        }}
 
 
           /** use this to display the list before search implementation

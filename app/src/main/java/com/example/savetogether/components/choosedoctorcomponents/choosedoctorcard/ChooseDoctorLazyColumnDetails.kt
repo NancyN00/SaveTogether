@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -130,7 +131,11 @@ fun ChooseDoctorCardSection(
 
             ) {
                 Row() {
-                    Image(painter = image, contentDescription = "Doctor Profile Pic")
+                    Image(painter = image, contentDescription = "Doctor Profile Pic",
+                        modifier = Modifier.size(100.dp)
+
+
+                        )
 
                 }
 

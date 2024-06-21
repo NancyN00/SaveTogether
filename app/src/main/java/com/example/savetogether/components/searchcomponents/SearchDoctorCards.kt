@@ -2,6 +2,7 @@ package com.example.savetogether.components.searchcomponents
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -48,9 +50,19 @@ fun SearchDoctorCard(
                 .clickable { }
                 .padding(vertical = 5.dp, horizontal = 8.dp),
         ) {
+            //fix the image to be in the middle
 
-            Row() {
-                Image(painter = searchimage, contentDescription = "Search Image")
+            Row(modifier = Modifier,
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+
+
+            ) {
+                Image(painter = searchimage, contentDescription = "Search Image",
+                    modifier = Modifier.size(100.dp),
+
+
+                )
             }
 
             Box(
