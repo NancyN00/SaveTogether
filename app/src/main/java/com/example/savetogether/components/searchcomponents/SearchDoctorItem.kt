@@ -19,7 +19,7 @@ val SearchDoctorItem: List<SearchDoctor> = listOf(
     ),
     SearchDoctor(
      //   searchimg = R.drawable.savetogether,
-        searchdoctorName = "Dr. Bikeri",
+        searchdoctorName = "Dr. Keri",
         searchhospitalName = "Kilma Hospital",
         searchrate = "5 stars"
     ),

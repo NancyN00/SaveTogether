@@ -3,7 +3,7 @@
 
     <style name="Theme.MySplashScreen" parent="Theme.SplashScreen">
 
-        <item name="windowSplashScreenBackground">@color/teal_700</item>
+        <item name="windowSplashScreenBackground">#009688</item>
 
         <item name="windowSplashScreenAnimatedIcon">@drawable/savetogether</item>
 
