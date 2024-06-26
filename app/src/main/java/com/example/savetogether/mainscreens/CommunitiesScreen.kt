@@ -9,9 +9,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.savetogether.components.communitiescomponent.CommunitiesMainLazyRow
+import androidx.compose.ui.unit.sp
+import com.example.savetogether.components.communitiescomponent.CommunitiesMain
 
 @Composable
 fun CommunitiesScreen() {
@@ -24,7 +27,10 @@ fun CommunitiesScreen() {
     {
         Text(
             text = "Our Communities",
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            textDecoration = TextDecoration.Underline,
+            fontSize = 15.sp
 
         )
 
@@ -32,12 +38,13 @@ fun CommunitiesScreen() {
 
         Text(
             text = "Feel free to interact",
-            fontWeight = FontWeight.Thin
+            fontWeight = FontWeight.Thin,
+            textAlign = TextAlign.Center,
         )
 
         Spacer(modifier = Modifier.height(6.dp))
 
-        CommunitiesMainLazyRow()
+       CommunitiesMain()
     }
 }
 
