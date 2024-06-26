@@ -81,7 +81,7 @@ fun LoginScreen(
         Text(
             text = "Forgot Password?",
             textAlign = TextAlign.End,
-            color = Color.Green
+            color = Color.Blue
         )
 
         Spacer(modifier = Modifier.height(100.dp))

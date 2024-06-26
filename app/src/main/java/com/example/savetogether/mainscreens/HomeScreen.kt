@@ -9,9 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.savetogether.R
 import com.example.savetogether.components.homecomponents.LocationContent
@@ -40,7 +38,7 @@ fun HomeScreen(
             LocationContent(
                 modifier = Modifier,
                 text1 = "Location",
-                text2 = "33 Mar Street, Bulgaria"
+                text2 = "33 Mar Street, Kampye"
             )
 
             Spacer(modifier = Modifier.height(8.dp))

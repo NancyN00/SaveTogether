@@ -19,6 +19,7 @@ import com.example.savetogether.mainscreens.CommunitiesScreen
 import com.example.savetogether.mainscreens.HomeScreen
 import com.example.savetogether.mainscreens.SearchScreen
 import com.example.savetogether.screens.ChooseDoctorScreen
+import com.example.savetogether.screens.CommunicationScreen
 import com.example.savetogether.screens.ConcernScreen
 import com.example.savetogether.screens.DctMedicalInfoScreen
 
@@ -62,7 +63,7 @@ fun AppBottomNavigation(){
 
             navController = navController,
 
-            startDestination = Screens.CommunitiesScreen.name){
+            startDestination = Screens.HomeScreen.name){
 
             composable(route = Screens.HomeScreen.name){
                 HomeScreen(navController)
@@ -86,6 +87,10 @@ fun AppBottomNavigation(){
 
             composable(route = Screens.DctMedicalInfoScreen.name){
                 DctMedicalInfoScreen(navController)
+            }
+
+            composable(route = Screens.CommunicationScreen.name){
+                CommunicationScreen(navController)
             }
 
         }

@@ -9,5 +9,6 @@ enum class Screens {
     DctMedicalInfoScreen(),
     RegistrationScreen(),
     Login(),
+    CommunicationScreen()
 
 }

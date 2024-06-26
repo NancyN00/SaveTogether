@@ -37,6 +37,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.savetogether.R
 import com.example.savetogether.components.authcomponents.ButtonContent
 import com.example.savetogether.components.choosedoctorcomponents.choosedoctorcard.chooseDoctorItem
@@ -90,7 +91,7 @@ fun ChooseDoctorScreen(navController: NavController) {
         ) {
 //added
             LazyColumn(
-                modifier = Modifier.padding(bottom = 120.dp)
+                modifier = Modifier.padding(top = 16.dp, bottom = 120.dp)
             ) {
 
                 item {
@@ -98,7 +99,7 @@ fun ChooseDoctorScreen(navController: NavController) {
                 }
 
                 items(chooseDoctorItem.size) { doctorDetails ->
-                    ChooseDoctorCardSection(doctorDetails)
+                    ChooseDoctorCardSection(doctorDetails, navController)
                 }
 
                 item {
@@ -115,14 +116,17 @@ fun ChooseDoctorScreen(navController: NavController) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChooseDoctorCardSection(
-    index: Int
+    index: Int,
+    navController: NavController
 ) {
     val doctorCard = chooseDoctorItem[index]
-    val image = painterResource(id = R.drawable.savetogether)
+    val image = painterResource(id = R.drawable.doctor)
     Card(
         onClick = {}, colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.errorContainer,
-        ), modifier = Modifier.fillMaxWidth().padding(8.dp)
+        ), modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
 
     ) {
         Column(modifier = Modifier
@@ -166,7 +170,11 @@ fun ChooseDoctorCardSection(
                     modifier = Modifier
                         .weight(1f)
                         .padding(end = 4.dp),
-                    onClick = { /*TODO*/ }, btnText = "More Details",
+                    onClick = {/*Later add a screen with doctors details*/
+
+                              navController.navigate(Screens.SearchScreen.name)
+
+                              }, btnText = "More Details",
 
 
                     )
@@ -175,7 +183,9 @@ fun ChooseDoctorCardSection(
                     modifier = Modifier
                         .weight(1f)
                         .padding(end = 4.dp),
-                    onClick = { /*TODO*/ },
+                    onClick = { /*TODO*/
+
+                              navController.navigate(Screens.CommunicationScreen.name)},
                     btnText = "Consult Now"
                 )
 

@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.savetogether.components.communitiescomponent.CommunitiesMain
 
 @Composable
@@ -37,7 +38,7 @@ fun CommunitiesScreen() {
         Spacer(modifier = Modifier.height(5.dp))
 
         Text(
-            text = "Feel free to interact",
+            text = "Interact and reach out!",
             fontWeight = FontWeight.Thin,
             textAlign = TextAlign.Center,
         )
