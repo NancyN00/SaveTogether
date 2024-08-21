@@ -89,7 +89,7 @@ fun SearchScreenDetails(viewModel: SearchViewModel = viewModel()){
 
         LazyColumn (modifier = Modifier.fillMaxSize() ) {
             items(searchResult) { doctor ->
-                SearchDoctorCard(doctor)
+                SearchDoctorcCard(doctor)
             }
         }}
 
